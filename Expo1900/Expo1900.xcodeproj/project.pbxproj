@@ -89,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				C0F0CB69261C4307008A110B /* Expo1900Tests.swift */,
+				C79FF4B22589F401005FB0FD /* Products */,
 				C0F0CB6B261C4307008A110B /* Info.plist */,
 			);
 			path = Expo1900Tests;
@@ -99,7 +100,6 @@
 			children = (
 				C79FF4B32589F401005FB0FD /* Expo1900 */,
 				C0F0CB68261C4307008A110B /* Expo1900Tests */,
-				C79FF4B22589F401005FB0FD /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +110,7 @@
 				C0F0CB67261C4307008A110B /* Expo1900Tests.xctest */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		C79FF4B32589F401005FB0FD /* Expo1900 */ = {

@@ -8,6 +8,8 @@ import UIKit
 
 class ExhibitionViewController: UIViewController {
     
+    let appdelegate = UIApplication.shared.delegate as! AppDelegate
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var visitorsLabel: UILabel!
@@ -20,6 +22,7 @@ class ExhibitionViewController: UIViewController {
         initViews()
         changeViewsValue()
         self.navigationItem.backButtonTitle = KoreanLetter.main
+        appdelegate.shouldSupportAllOrientation = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,6 +33,14 @@ class ExhibitionViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return .allButUpsideDown
+        } else {
+            return .all
+        }
     }
     
     private func changeViewsValue() {

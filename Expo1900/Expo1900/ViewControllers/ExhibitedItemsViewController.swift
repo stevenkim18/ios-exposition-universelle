@@ -9,6 +9,7 @@ import UIKit
 
 class ExhibitedItemsViewController: UIViewController {
     
+    let appdelegate = UIApplication.shared.delegate as! AppDelegate
     var items: [ExhibitedItem] = []
     
     @IBOutlet weak var exhibitedItemsTable: UITableView!
@@ -23,6 +24,7 @@ class ExhibitedItemsViewController: UIViewController {
         exhibitedItemsTable.register(nibName, forCellReuseIdentifier: "itemCell")
         self.navigationItem.title = KoreanLetter.koreanEntries
         parseExhibitedItems()
+        appdelegate.shouldSupportAllOrientation = true
     }
     
     private func parseExhibitedItems() {

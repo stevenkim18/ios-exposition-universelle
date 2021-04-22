@@ -9,6 +9,7 @@ import UIKit
 
 final class ItemDetailViewController: UIViewController {
     
+    let appdelegate = UIApplication.shared.delegate as! AppDelegate
     var exhibitedItem: ExhibitedItem?
     
     @IBOutlet weak var itemImage: UIImageView!
@@ -20,5 +21,6 @@ final class ItemDetailViewController: UIViewController {
         self.navigationItem.title = exhibitedItem.name
         itemImage.image = UIImage(named: exhibitedItem.imageName)
         itemDescription.text = exhibitedItem.description
+        appdelegate.shouldSupportAllOrientation = true
     }
 }
